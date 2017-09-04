@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+var students = [
+	{id:1,score:80},
+	{id:2,score:50},
+	{id:3,score:70}
+];
+var byScore = function(a,b){//由大到小
+	return b.score-a.score;
+};
+students.sort(byScore);
+
+var studentNames = ["wq","xl","gp"];
+studentNames.sort();//由大到小
+studentNames;  // ["gp","wq","xl"]
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>sort1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

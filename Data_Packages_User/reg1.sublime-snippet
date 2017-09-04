@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+var url='http://blog.163.com/album?id=1#comment';
+var reg=/(https?:)\/\/([^\/]+)(\/[^\?]*)?(\?[^#]*)?(#.*)?/;
+var arr=url.match(reg);
+console.log(arr);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>reg1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

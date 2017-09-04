@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+	.parent{width:200px;height:300px;}
+	
+	.parent{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jz3</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,36 @@
+<snippet>
+	<content><![CDATA[
+var elem=document.getElementById('div1');
+var clientX,clientY,moving;
+var mouseDownHandler=function(event){
+	event=event||window.event;
+	clientX=event.clientX;//获取鼠标起始位置
+	clientY=event.clientY;
+	moving=!0;
+}
+
+var mouseMoveHandler=function(event){
+	if(!moving) return;
+	event=event||window.event;
+	var newClientX=event.clientX,//获鼠标新位置
+		newClientY=event.clientY;
+	var left=parseInt(elem.style.left)||0,//获取窗口位置
+		top=parseInt(elem.style.right)||0;
+	elem.style.left=left+(newClientX-clientX);//将鼠标位移传递给窗口
+	elem.style.right=right+(newClientY-clientY);
+	clientX=newClientX;//更新鼠标起始位置
+	clientY=newClientY;				
+}
+
+var mouseUpHandler=function(event){
+	moving=!1;
+}
+addEvent(elem,'mousedown',mouseDownHandler);
+addEvent(elem,'mousemove',mouseMoveHandler);
+addEvent(elem,'mouseup',mouseUpHandler);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>event2</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+.parent{
+	display: flex;
+}
+.left{
+	width: 100px;
+	margin-right: 20px;
+}
+.right{
+	flex: 1;
+}//内容不宜过多，适宜小范围布局
+
+<div class="parent">
+<div class="left">
+	<p>left</p>
+</div>
+<div class="right">
+	<p>right</p>
+	<p>right</p>
+</div>
+</div>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>zffle</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,38 @@
+<snippet>
+	<content><![CDATA[
+var addEvent = document.addEventListener?//事件注册 兼容代码IE6、7、8
+	function(elem,type,listener,useCapture){
+		elem.addEventListener(type,listener,useCapture);
+	}:
+	function(elem,type,listener,useCapture){
+		elem.attacheEvent('on'+type,listener);
+	};
+
+var delEvent = document.removeEventListener?//事件取消
+	function(elem,type,listener,useCapture){
+		elem.removeEventListener(type,listener,useCapture);
+	}:
+	function(elem,type,listener,useCapture){
+		elem,detachEvent('on'+type,listener);
+	};
+
+	//事件触发 fireEvent(e2)
+
+// var elem=document.getElementById('div1');//高版本调用
+// var clickHandler=function(event){
+// 	//to do
+// }
+// elem.addEventListener('click',clickHandler,false);
+	
+var elem=document.getElementById('div1');//兼容调用
+var clickHandler=function(event){
+	event=event||window.event;
+	//to do
+}
+addEvent(elem,'click',clickHandler,false);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>event</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

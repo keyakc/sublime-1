@@ -1,0 +1,74 @@
+<snippet>
+	<content><![CDATA[
+<!-- tooltip章节 -->
+    <br><br>
+    <a href="#" data-toggle="tooltip" data-placement="bottom" title="<h2>'am Header2 </h2>">请悬停在我的上面</a>
+
+    <p class="tooltip-options" >
+        这是一个 
+        <a href="#" data-toggle="tooltip" title="<h2>'am Header2 </h2>">Tooltip 方法 options</a>.
+    </p>
+
+    <a href="#" data-toggle="tooltip" data-placement="bottom" title="<h2>'am Header2 </h2>">请悬停在我的上面</a>
+    <br>
+    <br>
+    <!-- popover章节 -->
+    <button class="btn btn-warning" title="标题"  
+    data-container="body" data-toggle="popover" data-placement="right" 
+    data-content="<h3>'am Header2 </h3>">
+    右侧的 Popover
+</button>
+<br>
+<br>
+<button type="button" class="btn btn-primary" title="标题"  
+data-container="body" data-toggle="popover" data-placement="right" 
+data-content="<h3>'am Header3 </h3>">
+右侧的 Popover
+</button>
+<br>
+<br>
+<h4>演示 .button('reset') 方法</h4>
+<div id="myButtons3" class="bs-example">
+    <button type="button" class="btn btn-primary" 
+    data-loading-text="Loading...">原始
+</button>
+</div>
+<h4>演示 .button(string) 方法</h4>
+<button type="button" class="btn btn-primary" id="myButton4" 
+data-complete-text="Loading finished">请点击我
+</button>
+<script>
+\$(function () { 
+    \$(".tooltip-options a").tooltip({html : true });
+    \$("[data-toggle='tooltip']").tooltip();
+    \$(".btn-primary").popover({html : true });
+    \$("[data-toggle='popover']").popover();
+});
+
+\$(function () { \$('.btn-primary').on('shown.bs.popover', function () {
+    alert("当显示时警告消息");
+})
+});
+
+\$(function() { 
+    \$("#myButtons3 .btn").click(function(){
+        \$(this).button('loading').delay(1000).queue(function() {
+            \$(this).button('reset');
+        });  
+
+    });
+});  
+\$(function() { 
+    \$("#myButton4").click(function(){
+        \$(this).button('loading').delay(1000).queue(function() {
+            \$(this).button('complete');
+        });        
+    });
+}); 
+</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>title1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

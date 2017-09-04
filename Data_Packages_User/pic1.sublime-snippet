@@ -1,0 +1,83 @@
+<snippet>
+	<content><![CDATA[
+.demo{width:615px;margin:10px auto;border:1px solid #ddd;}
+.v-box{height:300px;background:#fff;}
+.v-box .itbox{float:left;width:90px;height:90px;line-height:85px;margin:5px;text-align:center;border:1px solid #D9DADB;}
+.v-box .itbox img{width:auto;height:auto;max-width:100%;max-height:100%;vertical-align:middle;}
+.b-box{position:relative;height:40px;line-height:40px;text-align:right;border-top:2px solid #C0D0E1;background:#E0EAF4;}
+.b-box .add{margin-right:10px;padding:5px 10px;border:1px solid #C0C0C0;background:#AAAAAA;cursor:pointer;}
+.f-hidden{position:absolute;top:0;left:0;width:0;height:0;overflow:hidden;visibility:hidden;}
+
+<div class="demo">
+  <div class="v-box" id="vbox">
+    <!--
+    <div class="itbox"><img/></div>
+    -->
+  </div>
+  <div class="b-box">
+    <label for="image" class="add">添加</label>
+    <form class="f-hidden">
+      <input type="file" name="image" id="image" accept="image/*" multiple/>
+    </form>
+  </div>
+</div>
+
+function addEvent(node,event,handler){//兼容
+    if (!!node.addEventListener){
+        node.addEventListener(event,handler,!1);
+    }else{
+        node.attachEvent('on'+event,handler);
+    }
+}
+
+// 高版本浏览器支持
+// 低版本浏览器可以先上传图片至服务器或者采用flash支持
+function file2dataurl(file,callback){
+    if (!window.FileReader){
+        throw 'Browser not support File API !';
+    }
+    var reader = new FileReader();
+    //以Data URL形式解析文件，结果存储在result中 
+    reader.readAsDataURL(file);
+    reader.onload = function(event){//载入文件时启用函数
+        callback(event.target.result);
+    };
+}
+// 添加预览图片
+function appendImage(url){
+    // 添加预览图片容器
+    var div = document.createElement('div');
+    //赋样式
+    div.className = 'itbox';
+    //定位插入到vbox中
+    document.getElementById('vbox').appendChild(div);
+    // 添加预览图片
+    var image = new Image();
+    div.appendChild(image);
+    image.src = url;//此时url仍是整个文件以Data URL格式的解析
+}
+// 文件选择
+addEvent(
+    document.getElementById('image'),
+    'change',function(event){//当input节点accept新图片时
+        if (!event.target){
+            throw 'Browser not support!';
+        }
+        var list = event.target.files;//生成已选图片列表
+        if (!list||!list.length){
+            return;
+        }
+        //遍历节点Input下所有文件
+        for(var i=0,l=list.length;i<l;i++){
+            //传入一张图片，一个标签生成函数
+            file2dataurl(list[i],appendImage);
+        }
+        event.target.parentNode.reset();
+    }
+);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>pic1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

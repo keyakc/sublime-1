@@ -1,0 +1,61 @@
+<snippet>
+	<content><![CDATA[
+<div id="demo">d</div>
+	<span>upright</span>
+		<script>
+			//若查参以js对象形式出现需转化成标准形式
+			 function serialize(jsObj){
+		        if(!jsObj) return '';
+		        var pairs=[];
+		        for(var name in jsObj){
+		            if(!jsObj.hasOwnProperty(name)) continue;//过滤出key
+		            if(typeof jsObj[name]==='function') continue;//过滤掉函数
+		            var value=jsObj[name].toString();
+		            name = encodeURIComponent(name);
+		            value = encodeURIComponent(value);
+		            pairs.push(name + '=' + value);
+		        }
+		        return pairs.join('&');
+		    }
+	
+
+			var xhr=new XMLHttpRequest();
+			//get请求
+			var url="data.txt";//相对当前文档路径
+			xhr.open('get',url,true);	
+			xhr.send(null);
+			
+		
+			//psot请求	
+			// xhr.open('post',data.txt,true);
+			//若为form表单xhr.setRequestHeader(Content-Type,application/x-www-form-urlencoded);
+			//若上传文件multipart/form-data
+			//post请求参数表在post头，form表单时可以是FormData或String格式。
+			// xhr.send(serialize(jsObj));
+			
+	
+			xhr.onreadystatechange=function(){			
+				if (xhr.readyState==4&&xhr.status==200){
+					console.log("have sent");
+					var listJs=JSON.parse(xhr.responseText);
+					console.log(listJs[0].firstName);
+					// myTransform(dataJs);
+				}
+			}
+	
+			function myTransform(arr){
+				var out="";
+				var i;
+				for(i=0;i<arr.length;i++){
+					out += arr[i].firstName+arr[i].lastName+'<br/>';				
+				}
+				document.getElementById("demo").innerHtml=out;
+				console.log(out);
+			}	
+		</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ajax</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

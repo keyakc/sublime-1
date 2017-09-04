@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+var reg=/(.)(\d+)/g;
+var scores='Tom $88, Nicholas ￥100, jack ￡38.';
+var result;
+while(result=reg.exec(scores)){
+	console.log(result);
+	console.log(reg.lastIndex);//下一次匹配起始位置
+	reg.lastIndex +=10;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>reg3</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

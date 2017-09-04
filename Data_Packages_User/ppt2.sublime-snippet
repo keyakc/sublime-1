@@ -1,0 +1,55 @@
+<snippet>
+	<content><![CDATA[
+<div id="myCarousel" class="carousel slide">
+		<!-- 轮播（Carousel）指标 -->
+		<ol class="carousel-indicators">
+			<!-- data-slide-to点击滑动 -->
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-to="2"></li>
+		</ol>   
+		<!-- 轮播（Carousel）项目 -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="1.jpg" alt="First slide">
+				<div class="carousel-caption"><h1 style="color:purple;">标题 1</h1></div>
+			</div>
+			<div class="item">
+				<img src="2.jpg" alt="Second slide">
+				<div class="carousel-caption"><h1>标题 2</h1></div>
+			</div>
+			<div class="item">
+				<img src="3.jpg" alt="Third slide">
+			</div>
+		</div>
+		<!-- 轮播（Carousel）导航 -->
+		<a class="carousel-control left" href="#myCarousel" 
+		data-slide="prev">&lsaquo;
+	</a>
+	<a class="carousel-control right" href="#myCarousel" 
+	data-slide="next">&rsaquo;
+</a>
+
+</div>
+<div style="text-align:center;">
+	<input type="button" class="btn prev-slide" value="&lsaquo;上一页">
+	<input type="button" class="btn next-slide" value="下一页&rsaquo;">
+</div>
+
+<script>
+
+// 循环轮播到上一个项目
+\$(".prev-slide").click(function(){
+	\$("#myCarousel").carousel('prev');
+});
+// 循环轮播到下一个项目
+\$(".next-slide").click(function(){
+	\$("#myCarousel").carousel('next');
+});
+</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ppt2</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

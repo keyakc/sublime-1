@@ -1,0 +1,74 @@
+<snippet>
+	<content><![CDATA[
+<!-- 折叠组件外层id标识 -->
+	<div class="panel-group" id="accordion">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<!-- href或data-target -->
+					<!-- data-parent展开时使其余组件收回,删除则该特性取消-->
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+						点击我进行展开，再次点击我进行折叠。第 1 部分
+					</a>
+				</h4>
+			</div>
+			<!-- in初始化collapse状态为展开 -->
+			<div id="collapseOne" class="panel-collapse collapse in">
+				<div class="panel-body">
+					Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+					cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+					vice lomo.
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" href="#collapseTwo">
+						点击我进行展开，再次点击我进行折叠。第 2 部分
+					</a>
+				</h4>
+			</div>
+			<div id="collapseTwo" class="panel-collapse collapse in">
+				<div class="panel-body">
+					Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+					cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+					vice lomo.
+				</div>
+			</div>
+		</div>
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse"  href="#collapseThree">
+						点击我进行展开，再次点击我进行折叠。第 3 部分
+					</a>
+				</h4>
+			</div>
+			<div id="collapseThree" class="panel-collapse collapse">
+				<div class="panel-body">
+					Nihil anim keffiyeh helvetica, craft beer labore wes anderson 
+					cred nesciunt sapiente ea proident. Ad vegan excepteur butcher 
+					vice lomo.
+
+				</div>
+				<table class="table">
+					<th>产品</th><th>价格 </th>
+					<tr><td>产品 A</td><td>200</td></tr>
+					<tr><td>产品 B</td><td>400</td></tr>
+				</table>
+			</div>
+		</div>
+	</div>
+<script>
+\$(function () { 
+        \$('#collapseThree').on('show.bs.collapse', function () {
+            alert('嘿，当您展开时会提示本警告');})
+    });
+</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>collapse</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

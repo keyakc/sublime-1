@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+var animation = function (ele, attr, from, to) {
+  var distance = Math.abs(to - from);
+  var sign=(to-from)/distance;
+  var stepLength =distance/100;
+  var offset=0;
+  var step = function () {
+      var tmpOffset = offset + stepLength;
+      if (tmpOffset < distance) { //步进后如果没到终点               
+          ele.style.attr = from + tmpOffset*sign + 'px';//允许步进
+          offset = tmpOffset;//步进后更新已步进
+          //当ele.style.attr也从0增长时可与offset合并成一个量
+      } else {
+         ele.style.attr=to + 'px';//若到达终点，则赋终点
+         clearInterval(intervalID);//并清除动画
+      }
+  }
+  ele.style.attr = from + 'px';//初始化
+  var intervalId = setInterval(step, 10);//开始动画
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ani1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

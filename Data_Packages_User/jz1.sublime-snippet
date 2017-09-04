@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+	.parent{width:200px;height:300px;}
+	
+	.parent{
+		text-align: center;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.child{
+		display: inline-block;
+	}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jz1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,36 @@
+<snippet>
+	<content><![CDATA[
+<style>
+.text-danger {
+	width: 100px;
+	height: 100px;
+	background: red;
+}
+.active {
+	width: 100px;
+	height: 100px;
+	background: green;
+}
+</style>
+</head>
+<body>
+<div id="app">
+	<div v-bind:class="[errorClass ,isActive ? activeClass : '']"></div>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    isActive: true,
+	activeClass: 'active',
+    errorClass: 'text-danger'
+  }
+})
+</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>v-style</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

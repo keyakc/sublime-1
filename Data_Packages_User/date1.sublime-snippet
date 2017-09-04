@@ -1,0 +1,28 @@
+<snippet>
+	<content><![CDATA[
+<script>
+	var date=new Date();
+	var str=date.getFullYear()+'-'+padding(date.getMonth()+1)+'-'+padding(date.getDay())+' '+padding(date.getHours())+':'+padding(date.getMinutes())+':'+padding(date.getMinutes());
+	function padding(num){
+		return num>10?num:0+num;
+	}
+
+
+	function getDays(year, month){//计算天数
+		var date = new Date(year, month, 0);
+		return date.getDate();
+	}
+
+	alert('2001年2月有' + getDays(2001, 2) + '天。');
+	alert('2001年3月有' + getDays(2001, 3) + '天。');
+
+	var n=date.getTime();//距1970-1-1 00:00:00的毫秒数
+	date.setTime(n);//可用于生成或设置日期
+	new Date(n);
+</script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>date1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

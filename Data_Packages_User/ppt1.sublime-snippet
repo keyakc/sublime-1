@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+.is{position: relative;width: 480px;}
+.is img{display: block;}
+.is .title{position: absolute;bottom: 0;margin: 0;width: 100%;line-height: 45px;background-color: #000;opacity: 0.7;}
+.is .title a{margin-left: 20px;color: #fff;text-decoration: none;}
+.is .controls{position: absolute;bottom: 18px;right: 10px;line-height: 10px;}
+.is .controls span{display: inline-block;width: 10px;margin: auto 1px;height: 10px;border-radius: 10px;background-color: gray;}
+.is .controls span.cur{background-color: #fff;}
+.is{
+height:500px;
+width:500px;
+}
+
+<div class="is">
+	<img src="att.jp">
+	<p class="title"><a href="#">标题</a></p>
+	<div class="controls">
+		<span></span>
+		<span class="cur"></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ppt1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

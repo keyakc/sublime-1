@@ -1,0 +1,202 @@
+<snippet>
+	<content><![CDATA[
+<nav id="myScrollspy" class="navbar navbar-inverse navbar-static">
+        <div class="container-fluid">
+        <div class="navbar-header">
+          <!-- 设置折叠按钮data-toggle切换样式 -->
+          <!-- 这里的目标节点以样式.bs-js-navbar-scrollspy为标记 -->
+            <button class="navbar-toggle" data-toggle="collapse"
+                    data-target=".bs-js-navbar-scrollspy">
+                <!-- 按钮样式 -->
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">教程名称</a>
+        </div>
+        <!-- collapese折叠初始化 navbar-collapse小屏时折叠 -->
+        <!-- bs-js-navbar-scrollspy只是用来作为下拉标记,因此用作id属性也可 -->
+        <div class="collapse navbar-collapse bs-js-navbar-scrollspy">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#ios">iOS</a></li>
+                <li><a href="#svn">SVN</a></li>
+                <li class="dropdown">
+                    <a href="#" id="navbarDrop1" class="dropdown-toggle"
+                       data-toggle="dropdown">
+                        Java <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu"
+                        aria-labelledby="navbarDrop1">
+                        <li><a href="#jmeter" tabindex="-1">jmeter</a></li>
+                        <li><a href="#ejb" tabindex="-1">ejb</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#spring" tabindex="-1">spring</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div> 
+    </nav>
+    <!-- 内容监听导航 -->
+    <div data-spy="scroll" data-target="#myScrollspy" data-offset="0"
+         style="height:200px;overflow:auto; position: relative;">
+        <div class="section">
+            <h4 id="ios">iOS<small><a href="#" onclick="removeSection(this);">
+                        &times; 删除该部分</a></small>
+            </h4>
+            <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple
+                TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。</p>
+        </div>
+        <div class="section">
+            <h4 id="svn">SVN<small></small></h4>
+            <p>Apache Subversion，通常缩写为 SVN，是一款开源的版本控制系统软件。Subversion 由 CollabNet 公司在 2000 年创建。但是现在它已经发展为 Apache Software Foundation 的一个项目，因此拥有丰富的开发人员和用户社区。</p>
+        </div>
+        <div class="section">
+            <h4 id="jmeter">jMeter<small><a href="#" onclick="removeSection(this);">
+                        &times; 删除该部分</a></small>
+            </h4>
+            <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。</p>
+        </div>
+        <div class="section">
+            <h4 id="ejb">EJB</h4>
+            <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。</p>
+        </div>
+        <div class="section">
+            <h4 id="spring">Spring</h4>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。</p>
+            <p>Spring 框架最初是由 Rod Johnson 编写的，在 2003 年 6 月首次发布于 Apache 2.0 许可证下。</p>
+        </div>
+    </div>
+    <span id="activeitem" style="color:red;"></span>
+      
+      <br><br>
+             <!-- navbar navbar-default(inverse)导航栏样式 navbar-static-top从顶部插入导航栏-->
+             <div class="navbar navbar-inverse">   
+             <!-- container-fluid规范整体堆叠样式  -->
+             <div class="container-fluid">
+               <!-- navbar-header小屏响应时其后堆叠 -->
+               <div class="navbar-header">
+                 <a class="navbar-brand" href="#">商标或& n b s p</a>
+               </div>
+           
+               
+                 <!-- navbar-nav用于响应式排版 -->
+                 <ul class="nav navbar-nav">
+                   <li><a href="#"><span class="glyphicon glyphicon-apple"></span> iOS</a></li>           
+                   <li class="dropdown">
+                     <a href="#" data-toggle="dropdown">
+                       Java
+                       <b class="caret"></b>
+                     </a>
+                     <ul class="dropdown-menu">
+                       <li><a href="#">jmeter</a></li>
+                       <li><a href="#">EJB</a></li>
+                       <li><a href="#">Jasper Report</a></li>
+                       <li class="divider"></li>
+                       <li><a href="#">分离的链接</a></li>
+                       <li class="divider"></li>
+                       <li><a href="#">另一个分离的链接</a></li>
+                     </ul>
+                   </li>
+                   <!-- 导航中的表单 navbar-form元素单行分布-->
+                   <form class="navbar-form navbar-left">
+                     <div class="form-group">
+                       <input class="form-control" placeholder="Search">
+                     </div>
+                     <button class="btn btn-default">提交</button>
+                   </form>
+                   <!-- navbar-btn实现垂直居中 -->
+                   <div class="navbar-btn navbar-left">
+                   <!-- 对外样式navbar-btn和内部样式btn分层设置 -->
+                   <button class="btn btn-default">导航栏中的按钮</button>
+                   </div>
+                 </ul>
+                 <ul class="nav navbar-nav navbar-right">
+                   <li><a href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                   <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                 </ul>         
+             </div>
+           </div>
+           <!-- 面包屑导航 -->
+           <ul class="breadcrumb">
+           <li><a href="#">Home</a></li>
+           <li><a href="#">2013</a></li>
+           <li><a href="">十一月</a></li>
+           <li><a href="">TCL</a></li>
+           <li><a href="">Lenovol</a></li>
+           <li>  <a href="">Dell</a></li>
+           </ul>
+           
+           <div class="navbar navbar-default navbar-fixed-bottom">
+               <div class="container-fluid">
+               <div class="navbar-header">
+                   <a class="navbar-brand" href="#">Windows</a>
+               </div>
+               <div>
+                   <ul class="nav navbar-nav">
+                       <li><a href="#">SVN</a></li>
+                       <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                               Java <b class="caret"></b>
+                           </a>
+                           <ul class="dropdown-menu">
+                               <li><a href="#">jmeter</a></li>
+                               <li><a href="#">EJB</a></li>
+                               <li><a href="#">Jasper Report</a></li>
+                               <li class="divider"></li>
+                               <li><a href="#">分离的链接</a></li>
+                               <li class="divider"></li>
+                               <li><a href="#">另一个分离的链接</a></li>
+                           </ul>
+                       </li>
+                   </ul>
+               </div>
+               <form class="navbar-form navbar-left">
+                 <div class="form-group">
+                   <input class="form-control" placeholder="Search">
+                 </div>
+                 <button class="btn btn-default">提交</button>
+               </form>
+               </div>
+           </div>
+      
+           <ul class="nav nav-pills">
+              <li class="active"><a href="#">首页 <span class="badge">42</span></a></li>
+              <li><a href="#">简介</a></li>
+              <li><a href="#">消息 <span class="badge">3</span></a></li>
+          </ul>
+          <br>
+          <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
+              <li class="active">
+                  <a href="#">
+                      <span class="badge pull-right">42</span>
+                      首页
+                  </a>
+              </li>
+              <li><a href="#">简介</a></li>
+              <li>
+                  <a href="#">
+                      <span class="badge pull-right">3</span>
+                      消息
+                  </a>
+              </li>
+          </ul>
+  
+    <script>
+        \$(function(){
+            removeSection = function(e) {
+                \$(e).parents(".section").remove();
+            }
+            \$("#myScrollspy").scrollspy();
+            \$('#myScrollspy').on('activate.bs.scrollspy', function () {
+                var currentItem = \$(".nav li.active > a").text();
+                \$("#activeitem").html("目前您正在查看 - " + currentItem);
+            })
+        });
+    </script>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>nav2</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

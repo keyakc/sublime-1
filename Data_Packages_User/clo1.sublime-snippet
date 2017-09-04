@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+var arr = ['c','f','h','o'];
+var str = 'ab4de8g4ijklmn1';
+console.log(str);
+
+var func = (function(){
+  // count变量会保存在闭包作用域内，表示func被调用次数（即正在替换第几个字符）
+  var count = 0; 
+  return function(){
+    return arr[count++]; 
+  }
+})();
+
+str = str.replace(/\d/g, func)
+console.log(str);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>clo1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

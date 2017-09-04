@@ -1,0 +1,157 @@
+<snippet>
+	<content><![CDATA[
+        <style>
+                    .btn-group .btn,.btn-group .btn:hover{
+                        width:200px;
+                        height:50px;
+                        background-color:rgb(57,160,48);
+                        font-size:20px;
+                        border-radius:0px;/*圆转方*/
+                        background-color:rgb(255,255,255);
+                        color:gray;
+                        box-shadow:2px 2px 3px;
+                    }
+                    .btn-group .btn.active{/*.active是按住状态:avtive是按下状态*/
+                        background-color:rgb(57,160,48);
+                        color:rgb(255,255,255);
+                    }
+                    .btn-group .btn.active.focus{
+                        outline:0;
+                    }
+        
+                    .nav-pills{
+                    text-align:center;
+                    }
+                    .nav-pills > li + li {
+                    margin-left: 0px;/*选项间隙*/
+                    }
+                    .nav-pills li a,.nav-pills li a:hover{
+                    width:200px;
+                    height:50px;
+                    background-color:rgb(255,255,255);
+                    font-size:20px;
+                    border-radius:0px;/*圆转方*/
+                    color:gray;
+                    box-shadow:2px 2px 3px;
+                    }
+                    .nav-pills li.active a,/*切换时，该样式会停留几毫秒*/  
+                    .nav-pills li.active a:hover,               
+                    .nav-pills li.active a:focus/*触发了focuns因此要选上*/
+                    {
+                    background-color:rgb(57,160,48);
+                    }
+              </style>
+  <!-- group可以嵌套，但大小样式不继承 -->
+  <div class="btn-group btn-group-lg">
+      <button  class="btn btn-default">按钮 1</button>
+  
+      <div class="btn-group btn-group-md">
+      <button class="btn btn-default" data-toggle="dropdown">按钮 2 <span class="caret"></span></button>
+       <ul class="dropdown-menu">
+          <li><a href="#">下拉链接 1</a></li>
+          <li><a href="#">下拉链接 2</a></li>
+      </ul>
+      </div>
+  
+      <div class="btn-group btn-group-sm">
+        <!-- dropdown-toggle样式使按钮圆滑 -->
+      <button class="btn btn-primary" data-toggle="dropdown">下列</button>
+      <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+          <li><a href="#">下拉链接 3</a></li>
+          <li><a href="#">下拉链接 4</a></li>
+      </ul>
+      </div>
+  </div>
+
+  <div style="padding:10px 100px 10px">   
+    <div class="input-group">
+      <span class="input-group-addon">\$</span>
+      <input type="text" class="form-control">
+      <span class="input-group-addon">.00</span>
+    </div><br>
+
+    <div class="input-group">
+      <!-- input-group-addon 意为作为一个相邻单元-->
+      <span class="input-group-addon">
+      <input type="radio">
+      <input type="checkbox">
+      </span>
+      <input type="text" class="form-control">
+      <span class="input-group-btn">
+        <button class="btn btn-default">Go!</button>
+        <input class="btn btn-default" type="button" value="Hi!">
+      </span>
+    </div><br>
+            
+    <div class="input-group">
+        <input class="form-control">
+        <div class="input-group-btn">
+            <button class="btn btn-default" >下拉菜单               
+            </button>
+             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="#">功能</a>
+                </li>
+                <li>
+                    <a href="#">另一个功能</a>
+                </li>
+                <li>
+                    <a href="#">其他</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#">分离的链接</a>
+                </li>
+            </ul>
+        </div>
+    </div>  
+</div>
+
+<!-- 单个切换 -->
+<button type="button" class="btn btn-primary" 
+data-toggle="button"> 单个切换
+</button>
+<!-- 三选一 -->
+<div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="option1"> 选项 1
+    </label>
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="option2"> 选项 2
+    </label>
+    <label class="btn btn-primary">
+        <input type="radio" name="options" id="option3"> 选项 3
+    </label>
+</div>  
+<!-- 同时多选 -->
+<div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary">
+        <input type="checkbox"> 选项 1
+    </label>
+    <label class="btn btn-primary">
+        <input type="checkbox"> 选项 2
+    </label>
+    <label class="btn btn-primary">
+        <input type="checkbox"> 选项 3
+    </label>
+</div>
+<div class="container">
+      <br><br><br>
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn active"><input type="radio" name="options" id="option1">产品设计</label>
+        <label class="btn"><input type="radio" name="options" id="option2">编程语言</label>
+      </div>  
+    </div>
+<ul class="nav nav-pills">
+          <!-- data-toggle="tab"启用切换 -->
+            <li class="active"><a data-toggle="tab" href="#home">首页</a></li>  
+            <li><a data-toggle="tab" href="#menu1">菜单 1</a></li>
+        </ul>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>btn1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

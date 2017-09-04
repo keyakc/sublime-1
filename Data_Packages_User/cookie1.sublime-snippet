@@ -1,0 +1,62 @@
+<snippet>
+	<content><![CDATA[
+function getcookie(){//cookie文档转化成js对象
+	 				var cookie={};
+	 				var all=document.cookie;
+	 				if(all==='')
+	 					return cookie;
+	 				var list=all.split(';');//拆分
+	 				for(var i=0;i<list.length;i++){
+	 					var item=list[i];
+	 					var p=item.indexOf('=');//捕捉位置
+	 					var name=item.substring(0,p);//得到key
+	 					name=decodeURIComponent(name);
+	 					var value=item.substring(p+1);//得到value
+	 					value=decodeURIComponent(item);
+	 					cookie[name]=value;//重新构建
+	 				}
+	 				return cookie;
+	 			}
+
+	 			// getcookie
+				function getCookie (name) {
+				    var all = document.cookie;
+				    if (all === '')
+				        return "";
+				    var list = all.split('; ');
+				    for (var i = 0; i < list.length; i++) {
+				        if (list[i].indexOf(name) > -1 ) {
+				        	return decodeURIComponent(list[i].substring(name.length+1))
+				        }
+				    }
+				}
+				
+				//cookie设置
+	 			document.cookie='name=value';
+	 			//或者传入cookie属性
+	 			function setCookie(name,value,expires,path,domain,secure){
+	 			    var cookie=encodeURIComponent(name)+'='+encodeURIComponent(value);
+	 			    if(expires)
+	 			        cookie+=';expires'+expires.toGMTStringn();
+	 			    if(path)
+	 			        cookie+=';path='+path;
+	 			    if(domain)
+	 			        cookie+=';domain'+domain;
+	 			    if(secure)
+	 			        cookie+=';secure='+secure;
+	 			    document.cookie=cookie;
+	 			}
+	 			//删除cookie
+	 			function removeCookie(name,path,domain){
+	 			    document.cookie=name+'='
+	 			    +';path='+path
+	 			    +';domain='+domain
+	 			    +';max-age=0';//生存期置0
+	 			}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cookie1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+.parent{
+		margin-left: -20px;
+		/*缩进掉padding-left*/
+	}
+	.column{
+		float: left;
+		width: 25%;
+		padding-left: 20px;
+		box-sizing: border-box;
+	}
+
+<div class="parent">
+	<div class="column"><p>1</p></div>
+	<div class="column"><p>2</p></div>
+	<div class="column"><p>3</p></div>
+	<div class="column"><p>4</p></div>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dl1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

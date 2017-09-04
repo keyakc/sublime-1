@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+var scores = [60,70,80,90];
+var newScores = [];
+var addScore = function(item,index,array){
+	newScores.push(item+5);
+};
+scores.forEach(addScore);
+newScores; // [65,75,85,95]
+
+
+var scores = [60,70,80,90];
+var addScore = function(item,index,array){
+	return item+5;
+};
+scores.map(addScore);  //修改原数组[65,75,85,95]
+
+
+var students = [
+	{id:1,score:80},
+	{id:2,score:50},
+	{id:3,score:70}
+];
+var sum = function(previousResult,item,index,array){
+	return previousResult+item.score;
+};
+students.reduce(sum,0);  // 200
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>for1</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

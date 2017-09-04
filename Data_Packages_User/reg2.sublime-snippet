@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+var str='The price of tomato is 5, the price of apple is 10';
+str0=str.replace(/(\d+)/g,'\$1.00');//样式替换
+console.log(str0);
+
+var html='<label>网址：</label><input placeholder="以http://起始">';
+	html=html.replace(/[<>]/g,function(m0){
+		switch(m0){
+			case'<':return '&lt;';
+			case'>':return '&gt;';
+		}
+		});
+		console.log(html);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>reg2</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

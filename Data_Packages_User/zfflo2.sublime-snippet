@@ -1,0 +1,32 @@
+<snippet>
+	<content><![CDATA[
+.parent{
+	
+}
+.left,.center{
+	float: left;
+	width: 100px;
+	margin-right: 20px;
+}
+.right{
+	overflow: hidden;
+}
+
+<div class="parent">
+<div class="left">
+	<p>left</p>
+</div>
+<div class="center">
+	<p>center</p>
+</div>
+	<div class="right">
+		<p>right</p>
+		<p>right</p>
+	</div>
+</div>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>zfflo2</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

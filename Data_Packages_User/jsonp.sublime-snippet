@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+ function handleResponse(response){
+    alert('My name is'+ response.name);
+  }
+  var script=document.createElement('script');
+  script.scr='http://......';
+  document.body.insertBefore(script,document.body.firstChild);
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>jsonp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>

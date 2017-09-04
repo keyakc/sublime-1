@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+<blockquote> 
+  这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。这是一个默认的引用实例。  
+</blockquote>
+<blockquote>
+  这是一个带有源标题的引用。
+  <small>Someone famous in Source Title</small>
+</blockquote>
+<blockquote class="pull-right">
+  这是一个向右对齐的引用。
+  <small>Someone famous in <i>Source Title</i></small>
+</blockquote>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>quote</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.html</scope>
+</snippet>
